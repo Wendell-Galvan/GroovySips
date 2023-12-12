@@ -17,7 +17,7 @@ const Pricing = () => {
         <h2 className={`${playFair.className} flex justify-center text-xl`}>
           PACKAGES
         </h2>
-        <p className="m-4">
+        <p className="flex justify-center m-4">
           asdas asd asadasdasd asdasda asdasd aasdasdas asdasd asdasd sadas asd
           asdasd asda dasdas dasdas das fasfsadf asfa fasd afs asf
         </p>
@@ -26,7 +26,7 @@ const Pricing = () => {
         <h2 className={`${playFair.className} flex justify-center text-xl`}>
           Included
         </h2>
-        <p className="m-4">
+        <p className="flex justify-center m-4">
           asdas asd asadasdasd asdasda asdasd aasdasdas asdasd asdasd sadas asd
           asdasd asda dasdas dasdas das fasfsadf asfa fasd afs asf
         </p>
