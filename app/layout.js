@@ -12,7 +12,7 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body className="bg-stone-50 text-stone-800">
         <Navbar />
-        <main className="relative overflow-hidden mx-12 lg:mx-24">
+        <main className="overflow-x-hidden overflow-y-auto mx-12 lg:mx-24">
           {children}
         </main>
         <Footer />
