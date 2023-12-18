@@ -5,7 +5,7 @@ const notoSerif = Noto_Serif({ subsets: ["latin"] });
 
 const Contact = () => {
   return (
-    <div className="h-screen mx-auto">
+    <div className="h-full mx-auto">
       <div className="p-4">
         <h1
           className={`${notoSerif.className} flex justify-center font-bold text-2xl md:text-4xl`}
