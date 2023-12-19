@@ -1,14 +1,41 @@
 "use client";
 import Link from "next/link";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { FaBars, FaTimes, FaGlassCheers } from "react-icons/fa";
-import { Noto_Serif } from "next/font/google";
+import { Noto_Serif, Scope_One } from "next/font/google";
 import Logo from "./Logo";
 
 const notoSerif = Noto_Serif({ subsets: ["latin"] });
 
+const useScrollDirection = () => {
+  const [scrollDirection, setScrollDirection] = useState(null);
+
+  useEffect(() => {
+    let lastScrollY = window.pageYOffset;
+
+    const updateScrollDirection = () => {
+      const scrollY = window.pageYOffset;
+      const direction = scrollY > lastScrollY ? "down" : "up";
+      if (
+        direction !== scrollDirection &&
+        (scrollY - lastScrollY > 5 || scrollY - lastScrollY < -5)
+      ) {
+        setScrollDirection(direction);
+      }
+      lastScrollY = scrollY > 0 ? scrollY : 0;
+    };
+    window.addEventListener("scroll", updateScrollDirection);
+    return () => {
+      window.removeEventListener("scroll", updateScrollDirection);
+    };
+  }, [scrollDirection]);
+
+  return scrollDirection;
+};
+
 const Navbar = () => {
   const [nav, setNav] = useState(false);
+  const scrollDirection = useScrollDirection();
 
   const links = [
     {
@@ -27,7 +54,9 @@ const Navbar = () => {
 
   return (
     <nav
-      className={`${notoSerif.className} w-full h-20 sticky top-0 z-30 md:px-20 bg-stone-50 text-stone-800`}
+      className={`${notoSerif.className} sticky ${
+        scrollDirection === "down" ? "-top-24" : "top-0"
+      } w-full h-20 z-30 md:px-20 bg-stone-50 text-stone-800`}
     >
       <div className="container mx-auto px-4 h-full">
         <div className="flex justify-between items-center h-full">
