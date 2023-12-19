@@ -13,7 +13,7 @@ const Details = () => {
           Details
         </h1>
       </div>
-      <div className="container mx-auto mt-10">
+      <div className="container mx-auto m-10">
         <CollapsibleInfo
           title="STAFFING"
           content={
