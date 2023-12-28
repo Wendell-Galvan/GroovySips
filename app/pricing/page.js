@@ -1,5 +1,6 @@
 import { Noto_Serif, Playfair, Montserrat } from "next/font/google";
 import PackageCards from "../components/PackageCards";
+import ContactForm from "../components/ContactForm";
 
 const notoSerif = Noto_Serif({ subsets: ["latin"] });
 const playFair = Playfair({ subsets: ["latin"] });

@@ -32,10 +32,10 @@ const ContactForm = () => {
 
     emailjs
       .sendForm(
-        "YOUR_SERVICE_ID",
-        "YOUR_TEMPLATE_ID",
+        "service_b18nqpn",
+        "template_34ntmpd",
         form.current,
-        "YOUR_USER_ID",
+        "H-dRhcyODPvmAtSHH",
         templateParams
       )
       .then(
@@ -88,7 +88,7 @@ const ContactForm = () => {
     {
       label: "Event Date",
       type: "date",
-      name: "user_name",
+      name: "event_date",
       placeholder: "Your name",
     },
     {
@@ -123,7 +123,7 @@ const ContactForm = () => {
   ];
 
   return (
-    <form onSubmit={sendEmail} className={notoSerif.className}>
+    <form ref={form} onSubmit={sendEmail} className={notoSerif.className}>
       {formFields.map((field, index) => (
         <div key={index} className="mx-auto max-w-screen-md">
           <label className="block text-sm font-medium pt-2">

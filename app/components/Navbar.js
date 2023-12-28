@@ -13,6 +13,7 @@ const useScrollDirection = () => {
   useEffect(() => {
     let lastScrollY = window.pageYOffset;
 
+    //function to update scroll direction, used for hiding navbar with scroll down
     const updateScrollDirection = () => {
       const scrollY = window.pageYOffset;
       const direction = scrollY > lastScrollY ? "down" : "up";
